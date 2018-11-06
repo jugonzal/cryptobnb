@@ -18,16 +18,19 @@ const App = {
     await PropertyRegistry.init(); //wait until the property registry is initialized
     
     const { accounts } = web3.eth;
-    //console.log(accounts);
+    console.log('web3 ',web3)
+    console.log('web3.eth.accounts ',web3.eth.accounts);
     
     this.users = ['alice'];
     this.alice = accounts[0];
+    console.log('Alice:', this.alice)
     
     if (accounts.length === 1) {
       qs('#bob').style.display = 'none';
     } else {
       this.users.push('bob');
       this.bob = accounts[1];
+      console.log('Bob:', this.bob)
     }
     
     this.updateData();
